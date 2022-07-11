@@ -4,6 +4,8 @@ import PermissionsDefinitions from './permissions/definitions.json';
 import PermissionsRequest from './permissions/permissions-request.json';
 import PermissionsGrant from './permissions/permissions-grant.json';
 import Request from './request.json';
+import TenantsAdd from './tenants/tenants-add.json';
+import TenantsRemove from './tenants/tenants-remove.json';
 
 export const schemas = {
   Definitions,
@@ -11,5 +13,7 @@ export const schemas = {
   PermissionsDefinitions,
   PermissionsGrant,
   PermissionsRequest,
-  Request
+  Request,
+  TenantsAdd,
+  TenantsRemove
 };

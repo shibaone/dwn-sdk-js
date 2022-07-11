@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://identity.foundation/dwn/json-schemas/tenants-remove.json",
+  "type": "object",
+  "required": ["authorization", "descriptor"],
+  "additionalProperties": false,
+  "properties": {
+    "authorization": {
+      "$ref": "https://identity.foundation/dwn/json-schemas/general-jws.json"
+    },
+    "descriptor": {
+      "type": "object",
+      "required": ["method", "tenant"],
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "enum": ["TenantsRemove"],
+          "type": "string"
+        },
+        "tenant": {
+          "description": "DID of the tenant",
+          "$ref": "https://identity.foundation/dwn/json-schemas/defs.json#/definitions/did"
+        }
+      }
+    }
+  }
+}
