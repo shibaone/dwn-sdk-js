@@ -1,9 +1,10 @@
 import type { DeepPartial } from '../types';
 import type { GeneralJws, SignatureInput } from '../jose/jws/general/types';
+import type { PermissionsRequestSchema, PermissionsGrantSchema } from '../interfaces/permissions/types';
+import type { TenantsAddSchema, TenantsRemoveSchema } from '../interfaces/tenants/types';
 
 import { CID } from 'multiformats/cid';
 import { DIDResolver } from '../did/did-resolver';
-import { PermissionsRequestSchema, PermissionsGrantSchema } from '../interfaces/permissions/types';
 
 /**
  * Intersection type for all concrete message schema types (e.g. PermissionsRequestSchema)
@@ -42,7 +43,7 @@ export type GenericMessageSchema = BaseMessageSchema & DeepPartial<Data> & Parti
   }
 };
 
-export type MessageSchema = PermissionsRequestSchema | PermissionsGrantSchema | GenericMessageSchema;
+export type MessageSchema = PermissionsRequestSchema | PermissionsGrantSchema | TenantsAddSchema | TenantsRemoveSchema | GenericMessageSchema;
 
 export type AuthVerificationResult = {
   /** DIDs of all signers */
